@@ -171,7 +171,7 @@ async def proxy_other_endpoints(path: str, request: Request):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="LLM Proxy Server")
-    parser.add_argument("-port", type=int, default=8000, help="代理服务端口 (默认: 8000)")
+    parser.add_argument("-port", type=int, default=30000, help="代理服务端口 (默认: 30000)")
     parser.add_argument("-backend", type=str, default=BACKEND_URL, help="后端LLM服务地址")
     args = parser.parse_args()
     
