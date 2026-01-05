@@ -735,22 +735,6 @@ async def chat_completions(request: Request):
     return JSONResponse(result)
 
 
-@app.api_route("/v1/{path:path}", methods=["GET", "POST", "PUT", "DELETE"])
-async def proxy_other_endpoints(path: str, request: Request):
-    """其他请求直接透传（默认使用回答用户的模型）"""
-    url = f"{SGLANG_BASE_URL_CHAT}/v1/{path}"
-    headers = {k: v for k, v in request.headers.items()
-               if k.lower() not in ("host", "content-length")}
-
-    if request.method == "GET":
-        response = await client.get(url, headers=headers)
-    else:
-        body = await request.body()
-        response = await client.request(request.method, url, content=body, headers=headers)
-
-    return JSONResponse(response.json())
-
-
 @app.get("/health")
 async def health():
     """健康检查端点，包含连接池状态信息"""
@@ -771,6 +755,22 @@ async def health():
         "connection_states": connection_states,
         "heartbeat_interval": HEARTBEAT_INTERVAL
     }
+
+
+@app.api_route("/{path:path}", methods=["GET", "POST", "PUT", "DELETE", "OPTIONS", "HEAD", "PATCH"])
+async def proxy_other_endpoints(path: str, request: Request):
+    """其他请求直接透传（默认使用回答用户的模型）"""
+    url = f"{SGLANG_BASE_URL_CHAT}/{path}"
+    headers = {k: v for k, v in request.headers.items()
+               if k.lower() not in ("host", "content-length")}
+
+    if request.method == "GET":
+        response = await client.get(url, headers=headers)
+    else:
+        body = await request.body()
+        response = await client.request(request.method, url, content=body, headers=headers)
+
+    return JSONResponse(response.json())
 
 
 if __name__ == "__main__":
