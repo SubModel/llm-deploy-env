@@ -23,12 +23,6 @@ def process_request_body(body: dict) -> dict:
     
     # 针对 qwen3 模型的特殊处理
     if model in ["qwen3-max", "qwen3-max-thinking"]:
-        # 删除不支持的参数
-        body.pop("enable_thinking", None)
-        body.pop("reasoning", None)
-        body.pop("max_thinking_tokens", None)
-        body.pop("parallel_tool_calls", None)
-        
         # 处理 response_format
         if body.get("response_format", {}).get("type"):
             body.pop("response_format", None)
@@ -160,13 +154,28 @@ async def proxy_other_endpoints(path: str, request: Request):
     headers = {k: v for k, v in request.headers.items()
                if k.lower() not in ("host", "content-length")}
     
-    if request.method == "GET":
-        response = await client.get(url, headers=headers)
-    else:
-        body = await request.body()
-        response = await client.request(request.method, url, content=body, headers=headers)
-    
-    return JSONResponse(response.json())
+    try:
+        if request.method == "GET":
+            response = await client.get(url, headers=headers)
+        else:
+            body = await request.body()
+            response = await client.request(request.method, url, content=body, headers=headers)
+        
+        # 尝试返回 JSON，如果失败则返回原始内容
+        try:
+            return JSONResponse(response.json(), status_code=response.status_code)
+        except:
+            return JSONResponse({"content": response.text}, status_code=response.status_code)
+    except httpx.ConnectError as e:
+        return JSONResponse(
+            content={"error": {"message": f"无法连接到后端服务 {BACKEND_URL}: {str(e)}"}},
+            status_code=503
+        )
+    except Exception as e:
+        return JSONResponse(
+            content={"error": {"message": f"请求失败: {str(e)}"}},
+            status_code=500
+        )
 
 
 if __name__ == "__main__":
