@@ -5,7 +5,7 @@ import re
 import asyncio
 import httpx
 from fastapi import FastAPI, Request
-from fastapi.responses import JSONResponse, StreamingResponse
+from fastapi.responses import JSONResponse, StreamingResponse, PlainTextResponse
 import uvicorn
 import argparse
 
@@ -145,6 +145,22 @@ async def chat_completions(request: Request):
 async def health():
     """健康检查端点"""
     return {"status": "ok", "backend_url": BACKEND_URL}
+
+
+@app.get("/metrics")
+async def metrics():
+    """Prometheus metrics 端点（返回 text/plain 格式）"""
+    # 生成 Prometheus 格式的指标
+    metrics_output = """# HELP llm_proxy_status LLM Proxy service status (1=ok, 0=down)
+# TYPE llm_proxy_status gauge
+llm_proxy_status 1
+
+# HELP llm_proxy_backend_connected Backend connection status (1=connected, 0=disconnected)
+# TYPE llm_proxy_backend_connected gauge
+llm_proxy_backend_connected 1
+"""
+    
+    return PlainTextResponse(metrics_output, media_type="text/plain; version=0.0.4")
 
 
 @app.api_route("/{path:path}", methods=["GET", "POST", "PUT", "DELETE", "OPTIONS", "HEAD", "PATCH"])
