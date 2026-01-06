@@ -149,18 +149,38 @@ async def health():
 
 @app.get("/metrics")
 async def metrics():
-    """Prometheus metrics 端点（返回 text/plain 格式）"""
-    # 生成 Prometheus 格式的指标
-    metrics_output = """# HELP llm_proxy_status LLM Proxy service status (1=ok, 0=down)
+    """Prometheus metrics 端点（透传后端 metrics）"""
+    try:
+        # 透传后端的 metrics
+        url = f"{BACKEND_URL}/metrics"
+        response = await client.get(url, timeout=10.0)
+        
+        if response.status_code == 200:
+            # 直接返回后端的 metrics 数据
+            return PlainTextResponse(response.text, media_type="text/plain; version=0.0.4")
+        else:
+            # 如果后端没有 metrics，返回基本指标
+            metrics_output = """# HELP llm_proxy_status LLM Proxy service status (1=ok, 0=down)
 # TYPE llm_proxy_status gauge
 llm_proxy_status 1
 
 # HELP llm_proxy_backend_connected Backend connection status (1=connected, 0=disconnected)
 # TYPE llm_proxy_backend_connected gauge
-llm_proxy_backend_connected 1
+llm_proxy_backend_connected 0
 """
-    
-    return PlainTextResponse(metrics_output, media_type="text/plain; version=0.0.4")
+            return PlainTextResponse(metrics_output, media_type="text/plain; version=0.0.4")
+    except Exception as e:
+        print(f"⚠️ 获取后端 metrics 失败: {e}")
+        # 返回错误状态的基本指标
+        metrics_output = """# HELP llm_proxy_status LLM Proxy service status (1=ok, 0=down)
+# TYPE llm_proxy_status gauge
+llm_proxy_status 1
+
+# HELP llm_proxy_backend_connected Backend connection status (1=connected, 0=disconnected)
+# TYPE llm_proxy_backend_connected gauge
+llm_proxy_backend_connected 0
+"""
+        return PlainTextResponse(metrics_output, media_type="text/plain; version=0.0.4")
 
 
 @app.api_route("/{path:path}", methods=["GET", "POST", "PUT", "DELETE", "OPTIONS", "HEAD", "PATCH"])
