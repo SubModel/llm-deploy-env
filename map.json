@@ -1,234 +1,174 @@
-[
-  {
-    "name": "江苏-苏州昆山",
-    "latitude": 31.384,
-    "longitude": 120.981,
-
-    "gpu_count": {
-      "RTX_3060": 30,
-      "RTX_3070": 70,
-      "RTX_4090": 0,
-      "H200": 0,
-      "RTX_5090": 0,
-      "H100": 0,
-      "A10": 22
+{
+  "points": [
+    {
+      "name": "江苏-苏州昆山",
+      "latitude": 31.384,
+      "longitude": 120.981,
+      "gpu_count": {
+        "RTX_3060": 30,
+        "RTX_3070": 70,
+        "RTX_4090": 0,
+        "H200": 0,
+        "RTX_5090": 0,
+        "H100": 0,
+        "A10": 22
+      },
+      "gpu_fp16": {
+        "RTX_3060": 764.4,
+        "RTX_3070": 2843.4,
+        "RTX_4090": 0,
+        "H200": 0,
+        "RTX_5090": 0,
+        "H100": 0,
+        "A10": 1374.56
+      },
+      "total_gpu_count": 122,
+      "total_fp16": 4982.36
     },
 
-    "gpu_fp16": {
-      "RTX_3060": 764.4,
-      "RTX_3070": 2843.4,
-      "RTX_4090": 0,
-      "H200": 0,
-      "RTX_5090": 0,
-      "H100": 0,
-      "A10": 1374.56
+    {
+      "name": "河南-郑州",
+      "latitude": 34.747,
+      "longitude": 113.625,
+      "gpu_count": { "H100": 128 },
+      "gpu_fp16": { "H100": 213888 },
+      "total_gpu_count": 128,
+      "total_fp16": 213888
     },
 
-    "total_gpu_count": 122,
-    "total_fp16": 4982.36
-  },
-
-  {
-    "name": "河南-郑州",
-    "latitude": 34.747,
-    "longitude": 113.625,
-
-    "gpu_count": {
-      "RTX_3060": 0,
-      "RTX_3070": 0,
-      "RTX_4090": 0,
-      "H200": 0,
-      "RTX_5090": 0,
-      "H100": 128,
-      "A10": 0
+    {
+      "name": "新疆-哈密",
+      "latitude": 42.818,
+      "longitude": 93.515,
+      "gpu_count": { "H200": 24 },
+      "gpu_fp16": { "H200": 40104 },
+      "total_gpu_count": 24,
+      "total_fp16": 40104
     },
 
-    "gpu_fp16": {
-      "RTX_3060": 0,
-      "RTX_3070": 0,
-      "RTX_4090": 0,
-      "H200": 0,
-      "RTX_5090": 0,
-      "H100": 213888,
-      "A10": 0
+    {
+      "name": "新疆-克拉玛依",
+      "latitude": 45.528,
+      "longitude": 84.894,
+      "gpu_count": { "RTX_4090": 792 },
+      "gpu_fp16": { "RTX_4090": 130806.72 },
+      "total_gpu_count": 792,
+      "total_fp16": 130806.72
     },
 
-    "total_gpu_count": 128,
-    "total_fp16": 213888
-  },
-
-  {
-    "name": "新疆-哈密",
-    "latitude": 42.818,
-    "longitude": 93.515,
-
-    "gpu_count": {
-      "RTX_3060": 0,
-      "RTX_3070": 0,
-      "RTX_4090": 0,
-      "H200": 24,
-      "RTX_5090": 0,
-      "H100": 0,
-      "A10": 0
+    {
+      "name": "安徽-芜湖",
+      "latitude": 31.352,
+      "longitude": 118.433,
+      "gpu_count": { "RTX_5090": 128 },
+      "gpu_fp16": { "RTX_5090": 26828.8 },
+      "total_gpu_count": 128,
+      "total_fp16": 26828.8
     },
 
-    "gpu_fp16": {
-      "RTX_3060": 0,
-      "RTX_3070": 0,
-      "RTX_4090": 0,
-      "H200": 40104,
-      "RTX_5090": 0,
-      "H100": 0,
-      "A10": 0
+    {
+      "name": "甘肃",
+      "latitude": 36.059,
+      "longitude": 103.826,
+      "gpu_count": { "RTX_4090": 80 },
+      "gpu_fp16": { "RTX_4090": 13212.8 },
+      "total_gpu_count": 80,
+      "total_fp16": 13212.8
     },
 
-    "total_gpu_count": 24,
-    "total_fp16": 40104
-  },
-
-  {
-    "name": "新疆-克拉玛依",
-    "latitude": 45.528,
-    "longitude": 84.894,
-
-    "gpu_count": {
-      "RTX_3060": 0,
-      "RTX_3070": 0,
-      "RTX_4090": 792,
-      "H200": 0,
-      "RTX_5090": 0,
-      "H100": 0,
-      "A10": 0
+    {
+      "name": "河北-石家庄",
+      "latitude": 38.042,
+      "longitude": 114.514,
+      "gpu_count": { "RTX_5090": 40 },
+      "gpu_fp16": { "RTX_5090": 8384 },
+      "total_gpu_count": 40,
+      "total_fp16": 8384
     },
 
-    "gpu_fp16": {
-      "RTX_3060": 0,
-      "RTX_3070": 0,
-      "RTX_4090": 130806.72,
-      "H200": 0,
-      "RTX_5090": 0,
-      "H100": 0,
-      "A10": 0
+    {
+      "name": "湖北-宜昌",
+      "latitude": 30.691,
+      "longitude": 111.286,
+      "gpu_count": { "H200": 256 },
+      "gpu_fp16": { "H200": 427776 },
+      "total_gpu_count": 256,
+      "total_fp16": 427776
+    }
+  ],
+
+  "lines": [
+    {
+      "from": "河南-郑州",
+      "from_lat": 34.747,
+      "from_lon": 113.625,
+      "to": "江苏-苏州昆山",
+      "to_lat": 31.384,
+      "to_lon": 120.981,
+      "type": "to_kunshan"
     },
-
-    "total_gpu_count": 792,
-    "total_fp16": 130806.72
-  },
-
-  {
-    "name": "安徽-芜湖",
-    "latitude": 31.352,
-    "longitude": 118.433,
-
-    "gpu_count": {
-      "RTX_3060": 0,
-      "RTX_3070": 0,
-      "RTX_4090": 0,
-      "H200": 0,
-      "RTX_5090": 128,
-      "H100": 0,
-      "A10": 0
+    {
+      "from": "新疆-哈密",
+      "from_lat": 42.818,
+      "from_lon": 93.515,
+      "to": "江苏-苏州昆山",
+      "to_lat": 31.384,
+      "to_lon": 120.981,
+      "type": "to_kunshan"
     },
-
-    "gpu_fp16": {
-      "RTX_3060": 0,
-      "RTX_3070": 0,
-      "RTX_4090": 0,
-      "H200": 0,
-      "RTX_5090": 26828.8,
-      "H100": 0,
-      "A10": 0
+    {
+      "from": "新疆-克拉玛依",
+      "from_lat": 45.528,
+      "from_lon": 84.894,
+      "to": "江苏-苏州昆山",
+      "to_lat": 31.384,
+      "to_lon": 120.981,
+      "type": "to_kunshan"
     },
-
-    "total_gpu_count": 128,
-    "total_fp16": 26828.8
-  },
-
-  {
-    "name": "甘肃",
-    "latitude": 36.059,
-    "longitude": 103.826,
-
-    "gpu_count": {
-      "RTX_3060": 0,
-      "RTX_3070": 0,
-      "RTX_4090": 80,
-      "H200": 0,
-      "RTX_5090": 0,
-      "H100": 0,
-      "A10": 0
+    {
+      "from": "安徽-芜湖",
+      "from_lat": 31.352,
+      "from_lon": 118.433,
+      "to": "江苏-苏州昆山",
+      "to_lat": 31.384,
+      "to_lon": 120.981,
+      "type": "to_kunshan"
     },
-
-    "gpu_fp16": {
-      "RTX_3060": 0,
-      "RTX_3070": 0,
-      "RTX_4090": 13212.8,
-      "H200": 0,
-      "RTX_5090": 0,
-      "H100": 0,
-      "A10": 0
+    {
+      "from": "甘肃",
+      "from_lat": 36.059,
+      "from_lon": 103.826,
+      "to": "江苏-苏州昆山",
+      "to_lat": 31.384,
+      "to_lon": 120.981,
+      "type": "to_kunshan"
     },
-
-    "total_gpu_count": 80,
-    "total_fp16": 13212.8
-  },
-
-  {
-    "name": "河北-石家庄",
-    "latitude": 38.042,
-    "longitude": 114.514,
-
-    "gpu_count": {
-      "RTX_3060": 0,
-      "RTX_3070": 0,
-      "RTX_4090": 0,
-      "H200": 0,
-      "RTX_5090": 40,
-      "H100": 0,
-      "A10": 0
+    {
+      "from": "河北-石家庄",
+      "from_lat": 38.042,
+      "from_lon": 114.514,
+      "to": "江苏-苏州昆山",
+      "to_lat": 31.384,
+      "to_lon": 120.981,
+      "type": "to_kunshan"
     },
-
-    "gpu_fp16": {
-      "RTX_3060": 0,
-      "RTX_3070": 0,
-      "RTX_4090": 0,
-      "H200": 0,
-      "RTX_5090": 8384,
-      "H100": 0,
-      "A10": 0
+    {
+      "from": "湖北-宜昌",
+      "from_lat": 30.691,
+      "from_lon": 111.286,
+      "to": "江苏-苏州昆山",
+      "to_lat": 31.384,
+      "to_lon": 120.981,
+      "type": "to_kunshan"
     },
-
-    "total_gpu_count": 40,
-    "total_fp16": 8384
-  },
-
-  {
-    "name": "湖北-宜昌",
-    "latitude": 30.691,
-    "longitude": 111.286,
-
-    "gpu_count": {
-      "RTX_3060": 0,
-      "RTX_3070": 0,
-      "RTX_4090": 0,
-      "H200": 256,
-      "RTX_5090": 0,
-      "H100": 0,
-      "A10": 0
-    },
-
-    "gpu_fp16": {
-      "RTX_3060": 0,
-      "RTX_3070": 0,
-      "RTX_4090": 0,
-      "H200": 427776,
-      "RTX_5090": 0,
-      "H100": 0,
-      "A10": 0
-    },
-
-    "total_gpu_count": 256,
-    "total_fp16": 427776
-  }
-]
-
+    {
+      "from": "江苏-苏州昆山",
+      "from_lat": 31.384,
+      "from_lon": 120.981,
+      "to": "香港",
+      "to_lat": 22.3,
+      "to_lon": 114.2,
+      "type": "kunshan_to_hk"
+    }
+  ]
+}
