@@ -126,7 +126,7 @@
       "total_fp16": 26828.8
     },
     {
-      "name": "甘肃",
+      "name": "兰州",
       "latitude": 36.059,
       "longitude": 103.826,
       "gpu_count": {
@@ -245,3 +245,4 @@
     { "route_id": 8, "lat": 22.3, "lon": 114.1, "order": 2 }
   ]
 }
+
