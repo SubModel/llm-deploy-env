@@ -1,7 +1,7 @@
 {
   "nodes": [
     {
-      "name": "江苏-苏州昆山",
+      "name": "昆山",
       "latitude": 31.384,
       "longitude": 120.981,
       "gpu_count": {
@@ -26,7 +26,7 @@
       "total_fp16": 4982.36
     },
     {
-      "name": "河南-郑州",
+      "name": "郑州",
       "latitude": 34.747,
       "longitude": 113.625,
       "gpu_count": {
@@ -51,7 +51,7 @@
       "total_fp16": 213888
     },
     {
-      "name": "新疆-哈密",
+      "name": "哈密",
       "latitude": 42.818,
       "longitude": 93.515,
       "gpu_count": {
@@ -76,7 +76,7 @@
       "total_fp16": 40104
     },
     {
-      "name": "新疆-克拉玛依",
+      "name": "克拉玛依",
       "latitude": 45.528,
       "longitude": 84.894,
       "gpu_count": {
@@ -101,7 +101,7 @@
       "total_fp16": 130806.72
     },
     {
-      "name": "安徽-芜湖",
+      "name": "芜湖",
       "latitude": 31.352,
       "longitude": 118.433,
       "gpu_count": {
@@ -151,7 +151,7 @@
       "total_fp16": 13212.8
     },
     {
-      "name": "河北-石家庄",
+      "name": "石家庄",
       "latitude": 38.042,
       "longitude": 114.514,
       "gpu_count": {
@@ -176,7 +176,7 @@
       "total_fp16": 8384
     },
     {
-      "name": "湖北-宜昌",
+      "name": "宜昌",
       "latitude": 30.691,
       "longitude": 111.286,
       "gpu_count": {
@@ -199,6 +199,31 @@
       },
       "total_gpu_count": 256,
       "total_fp16": 427776
+    },
+    {
+      "name": "香港",
+      "latitude": 22.3,
+      "longitude": 114.1,
+      "gpu_count": {
+        "RTX_3060": 0,
+        "RTX_3070": 0,
+        "RTX_4090": 0,
+        "H200": 0,
+        "RTX_5090": 0,
+        "H100": 0,
+        "A10": 0
+      },
+      "gpu_fp16": {
+        "RTX_3060": 0,
+        "RTX_3070": 0,
+        "RTX_4090": 0,
+        "H200": 0,
+        "RTX_5090": 0,
+        "H100": 0,
+        "A10": 0
+      },
+      "total_gpu_count": 0,
+      "total_fp16": 0
     }
   ],
   "routes": [
